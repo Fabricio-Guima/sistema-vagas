@@ -1,0 +1,32 @@
+<%- include('./partials/header.ejs')%>
+<%- include('./partials/navbar.ejs')%>
+
+<body>
+    <div id="add-form-container" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Login</h1>
+            </div>
+            <div id="form-box" class=" col-md-12">
+                <h2></h2>
+                <form action="/authenticate" method="POST">
+                    <div class="form-group">
+                                              
+                        <label for="email">E-mail:</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Ex: mariasilva@empresa.com.br" required>
+    
+                        <label for="password">Senha:</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="******" required>
+                       
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                    
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<%- include('./partials/footer.ejs')%>

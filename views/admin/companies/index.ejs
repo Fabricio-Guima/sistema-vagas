@@ -1,0 +1,56 @@
+<%- include('../../partials/header.ejs')%>
+<%- include('../../partials/navbar.ejs')%>
+
+<body>
+ 
+  <div class="ghost"></div>
+  <h1 class="text-center">Minhas Vagas</h1>
+  
+  <div id="jobs-container" class="container">
+    <div class="row">
+      <a  class="back-link main-color mb-3" href="/admin/companies/jobs/new">Criar vaga</a>
+      <div class="col-md-12">
+        <table class="table table-hover table-striped">
+          <thead>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Salário</th>
+            <th>Ações</th>
+          </thead>
+          <tbody>
+            <% jobs.forEach(job =>{ %>
+            <tr>
+              <td><%= job.id %></td>
+              <td><%= job.title %></td>
+              <td><%= job.titlsalary %></td>
+              <td>
+                <a
+                  href="/admin/companies/jobs/edit/<%= job.id %>"
+                  class="btn btn-primary btn-warning"
+                  >Editar</a
+                >
+              <form action="/admin/companies/jobs/delete" style="display:inline-block"  method="POST" onsubmit="confirmarDelecao(event, this)">
+                  <input type="hidden" name="id" value="<%= job.id %>">
+                  <button class="btn btn-danger">Deletar</button>
+                </form>
+                
+              </td>
+            </tr>
+            <%})%>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+<%- include('../../partials/footer.ejs')%>
+<script>
+  function confirmarDelecao(event, form){
+    event.preventDefault();
+    var decision = confirm('Você quer realmente deletar esta vaga?');
+    if(decision){
+      form.submit();
+    }
+  }
+</script>

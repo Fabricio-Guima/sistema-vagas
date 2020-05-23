@@ -1,0 +1,20 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/navbar.ejs') %>
+
+<div id="job-view-container" class="container">
+<div class="row text-center">
+    <a  class="back-link main-color" href="/">voltar</a>
+    <div id="img-container" class="col-md-12">
+        <img src="/img/company.svg" alt="Company">
+    </div>
+    <div class="col-md-12">
+        <h1 class="main-color"><%= job.title %></h1>
+        <p class="bold">Descrição da vaga:</p>
+        <p class="job-desc"><%= job.description %></p>
+        <p class="mt-4"><span class="bold">Salário: R$</span> <%= job.salary %></p>
+        <p>E-mail para contato: <a href="mailto:<%= job.email %>" class="main-color"><%= job.email %></a></p>
+    </div>
+</div>
+</div>
+
+ <%- include('../../partials/footer.ejs') %>

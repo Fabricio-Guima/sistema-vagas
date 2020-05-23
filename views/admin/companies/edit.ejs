@@ -1,0 +1,40 @@
+
+<%- include('../../partials/header.ejs')%>
+<%- include('../../partials/navbar.ejs')%>
+
+<div id="add-form-container" class="container">
+    <div class="row">
+        <a  class="back-link main-color mb-3" href="/admin/companies/jobs">Voltar</a>
+        <div class="col-md-12">
+            <h1 class="text-center">Editar vaga</h1>
+        </div>
+        <div id="form-box" class=" col-md-12">
+           
+            <form action="/admin/companies/jobs/update" method="POST">
+                <div class="form-group">
+                    <label for="title">Título da vaga:</label>
+                    <input type="text" class="form-control" name="title" id="title" value="<%= job.title %>" placeholder="Digite o título da vaga" required>
+                   
+                    <label for="description">Descrição da vaga:</label>
+                    <textarea name="description" class="form-control" id="description" cols="30" rows="10"><%= job.description %></textarea>
+
+                    <label for="companyjob">Nome da empresa:</label>
+                    <input type="text" class="form-control" name="companyjob" id="companyjob" value="<%= job.companyjob %>" placeholder="Digite o nome da empresa" required>
+
+                    <label for="email">E-mail para contato:</label>
+                    <input type="email" class="form-control" name="email" id="email" value="<%= job.email %>" placeholder="Digite o email para contato" required>
+
+                    <label for="salary">Salário oferecido:</label>
+                    <input type="text" class="form-control" name="salary" id="salary" value="<%= job.salary %>" placeholder="Digite o salário da vaga" required>
+                   
+                </div>
+                <input type="hidden" name="id" value="<%= job.id %>">
+                <input type="hidden" name="flagnewjob" value="<%= job.flagnewjob %>">
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../../partials/footer.ejs')%>

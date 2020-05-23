@@ -1,0 +1,40 @@
+<%- include('../../partials/header.ejs') %>
+
+<%- include('../../partials/navbar.ejs') %>
+
+<div id="add-form-container" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Cadastre-se</h1>
+        </div>
+        <div id="form-box" class=" col-md-12">
+            <h2></h2>
+            <form action="/register/save" method="POST">
+                <div class="form-group">
+                    <label for="company">Razão Social:</label>
+                    <input type="text" class="form-control" name="company" id="company" placeholder="Ex: Empresa Tec LTDA" required>
+                   
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="number" name="cnpj" class="form-control" id="cnpj" placeholder="Ex: 01.000.222.0001-46" required>
+
+                    <label for="recruiter">Nome do recrutador:</label>
+                    <input type="text" class="form-control" name="recruiter" id="recruiter" placeholder="Ex: Maria da Silva" required>
+
+                    <label for="email">E-mail do recrutador:</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Ex: mariasilva@empresa.com.br" required>
+
+                    <label for="password">Senha para acesso:</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Digite o salário da vaga" required>
+                   
+                    <input type="hidden" name="status" id="status" value="2">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+                
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../../partials/footer.ejs') %>
